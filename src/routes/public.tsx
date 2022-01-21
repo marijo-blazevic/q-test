@@ -4,6 +4,7 @@ import { lazyImport } from "@/utils/lazyImport";
 import { MainLayout } from "@/components/layout/MainLayout";
 
 const { Posts } = lazyImport(() => import("@/features/posts"), "Posts");
+const { Post } = lazyImport(() => import("@/features/post"), "Post");
 
 const App = () => {
   return (
@@ -23,6 +24,10 @@ export const publicRoutes = [
       {
         path: "/posts",
         element: <Posts />,
+      },
+      {
+        path: "/post/:id",
+        element: <Post />,
       },
       { path: "/", element: <Navigate to="/posts" /> },
       { path: "*", element: <Navigate to="." /> },
