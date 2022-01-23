@@ -9,25 +9,25 @@ const { Post } = lazyImport(() => import("@/features/post"), "Post");
 const App = () => {
   return (
     <MainLayout>
-      <Suspense fallback={<></>}>
+      <Suspense fallback={<>Loading ...</>}>
         <Outlet />
       </Suspense>
     </MainLayout>
   );
 };
 
-export const publicRoutes = [
+export const publicRoutes = (message: string) => [
   {
     path: "",
     element: <App />,
     children: [
       {
         path: "/posts",
-        element: <Posts />,
+        element: <Posts message={message} />,
       },
       {
         path: "/post/:id",
-        element: <Post />,
+        element: <Post message={message} />,
       },
       { path: "/", element: <Navigate to="/posts" /> },
       { path: "*", element: <Navigate to="." /> },

@@ -17,3 +17,7 @@ export type CommentsParams = {
   email: string;
   body: string;
 };
+
+export type InfoProps = {
+  message: string;
+};

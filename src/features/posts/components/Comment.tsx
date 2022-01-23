@@ -14,11 +14,10 @@ export const Comment: React.FC<CommentsParams> = (props) => {
 };
 
 const commentContainerStyle = css`
-  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
 `;
 
 const commentBodyStyle = css`
   ${p2Style}
   margin-top: 0.3rem;
-  padding-left: 0.3rem;
 `;

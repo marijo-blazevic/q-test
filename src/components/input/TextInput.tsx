@@ -5,12 +5,14 @@ type TextInputProps = {
   onChange: (text: string) => void;
   placeholder?: string;
   className?: string;
+  disabled?: boolean;
 };
 
 export const TextInput: React.FC<TextInputProps> = (props) => {
-  const { onChange, placeholder, className } = props;
+  const { onChange, placeholder, className, disabled } = props;
   return (
     <input
+      disabled={disabled}
       type={"text"}
       onChange={(v) => onChange(v.target.value)}
       defaultValue={""}

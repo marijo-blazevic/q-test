@@ -14,7 +14,7 @@ const useComments = (postId: number) => {
     ["comments", postId],
     () => getCommentsByPostId(postId),
     {
-      enabled: !!postId,
+      enabled: false,
     }
   );
 };
